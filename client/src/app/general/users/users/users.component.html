@@ -1,0 +1,40 @@
+<h1 class="text-center">Liste des utilisateurs</h1>
+
+<div class="row">
+
+<table class="table table-striped col-lg-12">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Firstname</th>
+    <th scope="col">Username</th>
+    <th scope="col">Password</th>
+    <th scope="col">Phone number</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users; let i = index">
+    <th scope="row">{{ user.idusers }}</th>
+    <td>{{ user.nom }}</td>
+    <td>{{ user.prenom }}</td>
+    <td>{{ user.login }}</td>
+    <td>{{ user.password }}</td>
+    <td>{{ user.telephone }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.adresse }}</td>
+    <td>
+      <button (click)="deleteByUserId(user.idusers)" class="btn btn-danger">SUP</button>
+      <button routerLink="/users/{{user.idusers}}" class="btn btn-default">UPDATE</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+</div><!-- row -->
+
+<app-crud-users (test)="hellotest()"></app-crud-users>
+
