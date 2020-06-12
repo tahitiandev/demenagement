@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+
+      <ion-button color="light" (click)="goPop()">
+          <ion-icon name="arrow-undo-circle-outline"></ion-icon>
+      </ion-button>
+
+    <ion-title>{{ prenom  | titlecase }} {{ nom  | uppercase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+        <img id="detailimg" src="assets/{{avatar}}">
+
+
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ prenom  | titlecase }} {{ nom  | uppercase }}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{adresse}}
+        </ion-card-content>
+        <ion-card-content>
+          @email :  {{email}}
+        </ion-card-content>
+        <ion-card-content>
+          tel : {{telephone}}
+        </ion-card-content>
+      </ion-card>
+
+</ion-content>

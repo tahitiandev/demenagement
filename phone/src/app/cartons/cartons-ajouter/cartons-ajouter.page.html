@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+
+      <ion-button color="light" (click)="goPop()">
+          <ion-icon name="arrow-undo-circle-outline"></ion-icon>
+      </ion-button>
+
+    <ion-title>Nouveau carton</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label position="floating">Numero de carton</ion-label>
+          <ion-input type="text" name="numero" ngModel></ion-input>
+        </ion-item>
+     
+        <ion-item>
+          <ion-label position="floating">Type</ion-label>
+          <ion-select placeholder="Choisir un type" name="type" ngModel>
+              <ion-select-option *ngFor="let type of types" value="{{type.idtype}}">{{type.nomtype}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+     
+        <ion-item>
+          <ion-label position="floating">Contenu</ion-label>
+          <ion-input type="text" name="contenu" ngModel></ion-input>
+        </ion-item>
+     
+        <ion-item>
+          <ion-label position="floating">Origine</ion-label>
+          <ion-select placeholder="Choisir un type" name="origine" ngModel>
+              <ion-select-option *ngFor="let origine of origines" value="{{origine.idorigine}}">{{origine.lieuorigine}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+     
+        <ion-item>
+          <ion-label position="floating">Destination</ion-label>
+          <ion-select placeholder="Choisir un type" name="destination" ngModel>
+              <ion-select-option *ngFor="let destination of destinations" value="{{destination.iddestination}}">{{destination.lieudestination}}</ion-select-option>
+          </ion-select>
+        </ion-item>   
+
+        <br>        
+        <ion-button slot="end" type="submit" color="primary">Valider</ion-button>
+    
+      </ion-list>
+
+</form>
+
+</ion-content>
